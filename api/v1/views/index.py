@@ -33,10 +33,3 @@ def show_stats():
         "users": storage.count(User)
     }
     return jsonify(rep)
-
-
-@app_views.app_errorhandler(404)
-def not_found(e):
-    """Page not found."""
-    resp = {"error": "Not found"}
-    return jsonify(resp), e.code
